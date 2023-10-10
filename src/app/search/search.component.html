@@ -1,0 +1,33 @@
+
+<h1 class="text-center mb-4">Recipe Finder: App</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="input-group mb-3">
+                <div class="pr-2"> 
+                    <input type="text" class="form-control" [(ngModel)]="ingredients" placeholder="Enter ingredients separated by commas">
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" (click)="searchRecipes()">Search Recipes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p></p>
+
+<div class="container-2" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let recipe of recipes">
+        <div class="card all">
+          <img class="card-img-top" [src]="'assets/' + recipe.image" alt="{{ recipe.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <p class="card-text">{{ recipe.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
